@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
+const noOfRows = 9;
+const noOfColumns = 28;
 export default function VideoPage() {
   const matrix = new Array(9 * 28).fill("");
-  const noOfRows = 9;
-  const noOfColumns = 28;
   const selectOneItemPerRow = () => {
     const selectedNumbers = [];
     for (let i = 0; i < noOfRows; i++) {
@@ -13,7 +13,9 @@ export default function VideoPage() {
     }
     return selectedNumbers;
   };
-  const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
+  const initalPositions = [0, 29, 58, 87, 116, 145, 174, 203, 232, 261];
+  const [selectedNumbers, setSelectedNumbers] =
+    useState<number[]>(initalPositions);
 
   useEffect(() => {
     setInterval(() => {
