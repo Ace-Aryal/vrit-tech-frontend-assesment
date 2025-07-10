@@ -26,7 +26,7 @@ export default function VideoPage() {
     <div id="grid-container" className="grid grid-cols-28 w-full h-full flex-1">
       {matrix.map((_, index) => (
         <div
-          key={index + Math.random()}
+          key={index}
           className={`h-full w-full border border-gray-300  ${
             selectedNumbers.includes(index)
               ? "bg-indigo-600  animate-fadeout"

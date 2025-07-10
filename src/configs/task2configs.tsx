@@ -1,3 +1,9 @@
+import {
+  FirstCardComponentOne,
+  SecondCardComponentOne,
+  SecondCardComponentTwo,
+} from "@/app/task-2/_components/inner-contents";
+
 export const TASK_TWO_CONFIG = [
   {
     heading: "Start with Clarity",
@@ -5,8 +11,9 @@ export const TASK_TWO_CONFIG = [
     paragraph: `Overwhelmed by too many learning options? SkillShikshya provides a clear, 
       curated roadmap from the start. Whether you're a beginner or upskilling,
        we have a path tailored to your growth.`,
-    className: "bg-[#F45B5B]",
-    hasSlides: true,
+    bgColor: "bg-[#F45B5B]",
+
+    content: [<FirstCardComponentOne key="first-one" />],
     svg: (
       <svg
         className="z-50"
@@ -490,8 +497,12 @@ export const TASK_TWO_CONFIG = [
     heading: "Learn by Doing",
     subHeading: "Practical skills, real projects.",
     paragraph: `Theory is great, but action is better. At SkillShikshya, you learn by doing. Hands-on projects and real-world scenarios help you build, break, and create—leading to true mastery.`,
-    className: "bg-[#5492A0]",
-    hasSlides: true,
+    bgColor: "bg-[#5492A0]",
+
+    content: [
+      <SecondCardComponentOne key="first-two" />,
+      <SecondCardComponentTwo key="second-two" />,
+    ],
     svg: (
       <svg
         className="z-50"
@@ -1191,8 +1202,8 @@ export const TASK_TWO_CONFIG = [
     heading: "Get Mentored & Supported",
     subHeading: "You're not learning alone.",
     paragraph: `Stuck or need feedback? SkillShikshya’s community of mentors and learners has your back with live support, interactive discussions, and expert insights. You’re never on your own.`,
-    className: "bg-[#6C64A8]",
-    hasSlides: false,
+    bgColor: "bg-[#6C64A8]",
+    content: null,
     svg: (
       <svg
         className="z-50"
@@ -1788,8 +1799,9 @@ export const TASK_TWO_CONFIG = [
      showcasing your skills and job readiness,
      bringing you closer to that dream job,
       promotion, or your own venture.`,
-    className: "bg-[#A88964]",
-    hasSlides: false,
+    bgColor: "bg-[#A88964]",
+
+    content: null,
     svg: (
       <svg
         className="z-50"

@@ -4,7 +4,7 @@ import { TASK_TWO_CONFIG } from "@/configs/task2configs";
 
 function Task2Page() {
   return (
-    <div className="max-w-screen px-12 ">
+    <div className="max-w-screen px-12 mx-auto">
       <div className="mb-12 space-y-5">
         <h1 className=" text-2xl text-[#414141] font-semibold">
           Your SkillShikshya Jourey
@@ -16,9 +16,9 @@ function Task2Page() {
         </h2>
       </div>
 
-      <div className="grid  grid-cols-2 gap-10 space-y-4 max-w-screen ">
+      <div className="grid  grid-cols-2 gap-10 space-y-4 w-fit ">
         {TASK_TWO_CONFIG.map((config, index) => {
-          const { heading, subHeading, paragraph, className, hasSlides, svg } =
+          const { heading, subHeading, paragraph, bgColor, content, svg } =
             config;
           const isEven = (index + 1) % 2 === 0;
           return (
@@ -27,9 +27,10 @@ function Task2Page() {
               heading={heading}
               subHeading={subHeading}
               paragraph={paragraph}
-              className={className}
+              bgColor={bgColor}
               svg={svg}
               key={heading}
+              content={content}
             />
           );
         })}

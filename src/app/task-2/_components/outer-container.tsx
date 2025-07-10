@@ -1,47 +1,63 @@
 // reuable outermost component for the  task-2 layout
 "use client";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import InnerContainer from "./inner-container";
 type OuterConatinerProps = {
-  className: string;
+  bgColor: string;
   heading: string;
   subHeading: string;
   imagePosition: "left" | "right";
   paragraph: string;
   svg: React.ReactNode;
+  content:
+    | readonly [React.JSX.Element]
+    | readonly [React.JSX.Element, React.JSX.Element]
+    | null;
 };
 function OuterConatiner({
-  className,
+  bgColor,
   heading,
   subHeading,
   imagePosition = "left",
   paragraph,
   svg,
+  content,
 }: OuterConatinerProps) {
+  const [hovered, setHovered] = useState(false);
+  const shouldHideLayer1 = hovered;
   return (
-    <div className="relative aspect-[592/351] ">
+    <div
+      onMouseEnter={() => {
+        if (content) {
+          setHovered(true);
+        }
+      }}
+      onMouseLeave={() => setHovered(false)}
+      className="relative aspect-[592/351] max-w-[592px] max-h-[351px] min-w-[395px] min-h-[234px]"
+    >
       <motion.div
         initial={{
           opacity: 1,
           x: 0,
+          display: "block",
         }}
-        whileHover={{
-          opacity: 0,
-          x: -2000,
+        animate={{
+          x: shouldHideLayer1 ? -2000 : 0,
+          opacity: shouldHideLayer1 ? 0 : 1,
         }}
         transition={{
           duration: 1,
           ease: "easeInOut",
         }}
         className={cn(
-          `relative    h-full w-full
-           py-[58px] bg-red-500 rounded-3xl flex flex-col gap-4 text-white px-[35px] `,
-          className,
+          `relative h-full w-full py-[58px] bg-red-500 rounded-3xl flex flex-col gap-4 text-white px-[35px] `,
+          bgColor,
           {
             "text-left ": imagePosition === "right",
             "text-right": imagePosition === "left",
+            "pointer-events-none": shouldHideLayer1,
           }
         )}
       >
@@ -73,9 +89,15 @@ function OuterConatiner({
           </div>
         </div>
       </motion.div>
-      <div className="absolute inset-0 -z-10">
-        <InnerContainer />
-      </div>
+      {!!content && (
+        <div
+          className={cn("absolute h-full w-full inset-0  -z-10 duration-1000", {
+            "z-10": shouldHideLayer1,
+          })}
+        >
+          <InnerContainer bgColor={bgColor} content={content} />
+        </div>
+      )}
     </div>
   );
 }

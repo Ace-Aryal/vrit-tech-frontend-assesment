@@ -32,10 +32,10 @@ function Navbar() {
         const isActive = navItem.href === pathname;
         return (
           <Link
+            key={navItem.href}
             className={cn("font-medium rounded-lg px-2 py-1", {
               "bg-blue-100 text-blue-600": isActive,
             })}
-            key={navItem.href}
             href={navItem.href}
           >
             {navItem.label}
