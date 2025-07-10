@@ -9,6 +9,7 @@ export const TASK_TWO_CONFIG = [
     hasSlides: true,
     svg: (
       <svg
+        className="z-50"
         width="322"
         height="403"
         viewBox="0 0 322 403"
@@ -493,6 +494,7 @@ export const TASK_TWO_CONFIG = [
     hasSlides: true,
     svg: (
       <svg
+        className="z-50"
         width="245"
         height="431"
         viewBox="0 0 245 431"
@@ -1193,6 +1195,7 @@ export const TASK_TWO_CONFIG = [
     hasSlides: false,
     svg: (
       <svg
+        className="z-50"
         width="372"
         height="314"
         viewBox="0 0 372 314"
@@ -1789,6 +1792,7 @@ export const TASK_TWO_CONFIG = [
     hasSlides: false,
     svg: (
       <svg
+        className="z-50"
         width="341"
         height="379"
         viewBox="0 0 341 379"

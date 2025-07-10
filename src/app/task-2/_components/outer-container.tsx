@@ -1,6 +1,9 @@
+// reuable outermost component for the  task-2 layout
+"use client";
 import { cn } from "@/lib/utils";
 import React from "react";
-
+import { motion } from "motion/react";
+import InnerContainer from "./inner-container";
 type OuterConatinerProps = {
   className: string;
   heading: string;
@@ -18,35 +21,60 @@ function OuterConatiner({
   svg,
 }: OuterConatinerProps) {
   return (
-    <div
-      className={cn(
-        "relative  aspect=[592/351]  py-[58px] bg-red-500 rounded-3xl flex gap-2 text-white px-[35px] ",
-        className,
-        {
-          "text-left ": imagePosition === "right",
-          "text-right": imagePosition === "left",
-        }
-      )}
-    >
-      <div
-        className={cn("w-1/3 relative ", {
-          "order-1": imagePosition === "right",
-        })}
+    <div className="relative aspect-[592/351] ">
+      <motion.div
+        initial={{
+          opacity: 1,
+          x: 0,
+        }}
+        whileHover={{
+          opacity: 0,
+          x: -2000,
+        }}
+        transition={{
+          duration: 1,
+          ease: "easeInOut",
+        }}
+        className={cn(
+          `relative    h-full w-full
+           py-[58px] bg-red-500 rounded-3xl flex flex-col gap-4 text-white px-[35px] `,
+          className,
+          {
+            "text-left ": imagePosition === "right",
+            "text-right": imagePosition === "left",
+          }
+        )}
       >
-        {" "}
-        <div
-          className={cn("absolute z-40 -bottom-36 animate-vertical-marquee", {
-            "-left-32": imagePosition === "left",
-            "-right-20": imagePosition === "right",
-          })}
-        >
-          <div> {svg}</div>
+        <h3 className="text-3xl  font-bold whitespace-nowrap">{heading}</h3>
+        <h4 className=" text-xl font-semibold ">{subHeading}</h4>
+
+        <div className="flex">
+          {/* svg overlay */}
+          <div
+            className={cn("w-2/5 relative ", {
+              "order-1": imagePosition === "right",
+            })}
+          >
+            {" "}
+            <div
+              className={cn(
+                "absolute z-10  -bottom-36 animate-vertical-marquee",
+                {
+                  "-left-32": imagePosition === "left",
+                  "-right-20": imagePosition === "right",
+                }
+              )}
+            >
+              {svg}
+            </div>
+          </div>
+          <div className="w-3/5">
+            <p className="mt-2">{paragraph}</p>
+          </div>
         </div>
-      </div>
-      <div className="w-2/3 flex flex-col gap-8">
-        <h2 className="text-2xl  font-bold whitespace-nowrap">{heading}</h2>
-        <h3 className=" text-lg font-semibold ">{subHeading}</h3>
-        <p className="">{paragraph}</p>
+      </motion.div>
+      <div className="absolute inset-0 -z-10">
+        <InnerContainer />
       </div>
     </div>
   );
