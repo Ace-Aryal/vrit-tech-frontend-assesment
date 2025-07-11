@@ -68,8 +68,9 @@ export default function Home() {
               type: "spring",
               delay: 0.3,
             }}
-            className="absolute w-24 h-24"
+            className="absolute w-24 -z-10 h-24"
           >
+            {/* -z-10 to hide background of gif */}
             <TestimonialImage
               src="/like.gif"
               shouldAnimate={false}
