@@ -29,9 +29,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${geistSans.variable}antialiased`}
       >
-        <div className="flex flex-col  max-w-screen min-h-screen">
+        <div className="flex flex-col  w-screen min-h-screen">
           <Navbar />
-          <main className="flex-1  my-16 flex flex-col"> {children}</main>
+          <main className="flex-1 h-full my-8 flex flex-col"> {children}</main>
         </div>
       </body>
     </html>
