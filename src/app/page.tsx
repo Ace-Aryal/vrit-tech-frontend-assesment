@@ -2,9 +2,8 @@
 import TestimonialImage from "@/components/atoms/testimonials-image";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
-import { animate } from "motion";
 import Link from "next/link";
 export default function Home() {
   const [isHovering, setIsHovering] = useState(false);
