@@ -1,5 +1,5 @@
 "use client";
-import TestimonialImage from "@/components/atoms/testimonials-image";
+import TestimonialImage from "@/components/organisms/testimonials-image";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -41,6 +41,7 @@ export default function Task1Page() {
                 gap: "0.25rem",
               }}
               animate={{
+                // animating gap
                 gap: ["0.25rem", "1rem", "0.25rem"],
                 keyTimes: ["0", "2", "4"],
               }}
@@ -52,7 +53,7 @@ export default function Task1Page() {
               <ArrowRight className="h-5 w-5" />
             </motion.div>
           </Link>
-
+          {/* testimonial -1 */}
           <Testimonial1Component isHoveringParent={isHovering} />
           {/* like gif */}
           <motion.div
@@ -267,7 +268,7 @@ function CommentBox({ text }: { text: string }) {
     </motion.div>
   );
 }
-// description with paragaraph , name and course // can be made resuable if needed
+// description with paragaraph , name and course nerolled | can be made resuable if needed
 function DescriptionBox() {
   return (
     <motion.div
@@ -334,6 +335,7 @@ function VideoBox() {
     </motion.div>
   );
 }
+//  unique component for testimonial one with description and comment box
 function Testimonial1Component({
   isHoveringParent,
 }: {
@@ -377,7 +379,7 @@ function Testimonial1Component({
     </motion.div>
   );
 }
-
+// component for testimonial 4 with video and comment box
 function Testimonial4Component({
   isHoveringParent,
 }: {

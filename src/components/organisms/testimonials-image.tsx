@@ -1,3 +1,5 @@
+// resuable component for displaying all animated testimonial images and stickers
+
 import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "motion/react";

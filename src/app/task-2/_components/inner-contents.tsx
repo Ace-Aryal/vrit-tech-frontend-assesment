@@ -1,3 +1,5 @@
+// unique contents which are displayed in the second layer of task 2 cards
+
 export function FirstCardComponentOne() {
   return (
     <div className="relative text-white h-full w-full  z-0 max-w-[592px] max-h-[351px] bg-none">

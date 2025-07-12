@@ -25,6 +25,7 @@ function OuterConatiner({
   svg,
   content,
 }: OuterConatinerProps) {
+  // trcking hocered state on card
   const [hovered, setHovered] = useState(false);
   const shouldHideLayer1 = hovered;
   return (
@@ -66,6 +67,7 @@ function OuterConatiner({
 
         <div className="flex">
           {/* svg overlay */}
+          {/* using same component on the basic of odd and even to control flex order */}
           <div
             className={cn("w-2/5 relative ", {
               "order-1": imagePosition === "right",

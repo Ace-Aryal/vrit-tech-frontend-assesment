@@ -13,6 +13,7 @@ export default function Task4Page() {
     }
     return selectedNumbers;
   };
+  // dummy positions for 1st render
   const initalPositions = [0, 29, 58, 87, 116, 145, 174, 203, 232, 261];
   const [selectedNumbers, setSelectedNumbers] =
     useState<number[]>(initalPositions);

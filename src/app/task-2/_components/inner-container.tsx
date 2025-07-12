@@ -1,3 +1,4 @@
+// second layer for sliding cards
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, { useState } from "react";
@@ -15,6 +16,7 @@ function InnerContainer({
     index: 0,
     content: content[0],
   });
+  // current contenet on the slide
   return (
     <div
       className={cn(

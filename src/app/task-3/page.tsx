@@ -14,7 +14,7 @@ const courseConfigs = [
   },
   {
     heading: "Ongoing Courses",
-    subHeading: "ccurrently happening—don’t miss out on the action!",
+    subHeading: "currently happening—don’t miss out on the action!",
     noOfCourses: 10,
   },
 ];
