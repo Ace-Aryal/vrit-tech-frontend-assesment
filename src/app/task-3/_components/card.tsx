@@ -30,7 +30,7 @@ function Task3Card({
           ? {
               width: "36.25rem",
               backgroundColor: "#C33241",
-              flexDirection: "row-reverse",
+
               color: "white",
               gap: "2rem",
             }
@@ -38,21 +38,45 @@ function Task3Card({
               width: "17.4rem",
 
               backgroundColor: "#F9EBEC",
-              flexDirection: "column",
+
               color: "#C33241",
             }
       }
       transition={{
         duration: 0.4,
       }}
-      whileHover="hovered"
       onClick={() => setActiveCardIndex(index)}
       className={cn(
-        `w-70 rounded-4xl relative h-115 flex  my-auto justify-center items-center
+        `w-70 rounded-4xl  h-115 flex flex-col my-auto justify-center items-center
           p-10`
       )}
     >
-      <motion.div>
+      <motion.div
+        animate={
+          isActive
+            ? {
+                backgroundColor: "#C33241",
+                flexDirection: "row-reverse",
+                color: "white",
+                gap: "2rem",
+              }
+            : {
+                width: "17.4rem",
+
+                backgroundColor: "#F9EBEC",
+                flexDirection: "column",
+                color: "#C33241",
+              }
+        }
+        transition={{
+          duration: 0.4,
+        }}
+        whileHover="hovered"
+        className={cn(
+          `w-70 rounded-4xl relative h-115 flex   justify-center items-center
+          `
+        )}
+      >
         {!isActive && (
           <motion.div
             initial={{
@@ -66,7 +90,7 @@ function Task3Card({
             transition={{
               duration: 0.5,
             }}
-            className="absolute w-50 h-50 -top-13 right-0 "
+            className="absolute w-50 h-50 -top-20 right-0 "
           >
             <p className="text-black text-lg">Click Me!</p>
             <svg
