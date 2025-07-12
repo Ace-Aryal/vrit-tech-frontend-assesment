@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 const noOfRows = 9;
 const noOfColumns = 28;
-export default function VideoPage() {
+export default function Task4Page() {
   const matrix = new Array(9 * 28).fill("");
   const selectOneItemPerRow = () => {
     const selectedNumbers = [];

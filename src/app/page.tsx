@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
-export default function Home() {
+export default function Task1Page() {
   const [isHovering, setIsHovering] = useState(false);
   return (
     <div className="h-full relative flex-1 px-12 w-full grid place-items-center">
