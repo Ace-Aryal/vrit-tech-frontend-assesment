@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   findLargestNumber,
   printEvenNumbers,
+  reverseString,
   sumOfArrayNumbers,
 } from "./utils";
 
@@ -13,11 +14,13 @@ function EasyQuestions() {
   const [largestNum, setLargestNum] = useState(0);
   const [evenNumbers, setEvenNumbers] = useState<number[]>([]);
   const [sum, setSum] = useState(0);
+  const [reversedString, setReversedString] = useState<string | null>(null);
   useEffect(() => {
     // used same values as provided in the assignment
     setLargestNum(findLargestNumber([1, 7, 9, 2, 5]));
     setEvenNumbers(printEvenNumbers(10));
     setSum(sumOfArrayNumbers([1, 5, 9]));
+    setReversedString(reverseString("Bibek"));
   }, []);
 
   return (
@@ -31,6 +34,12 @@ function EasyQuestions() {
         </div>
         <div>
           <p>Sum of array [1, 5, 9]:{sum}</p>
+        </div>
+        <div>
+          <p>
+            Reversed string (Bibek):
+            {reversedString ? reversedString : "processing"}
+          </p>
         </div>
       </div>
 
