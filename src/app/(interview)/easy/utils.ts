@@ -1,3 +1,8 @@
+// reverse a string : task 1
+export function reverseString(input: string) {
+  return input.split("").reverse().join("");
+}
+
 // find largest number : task2
 export function findLargestNumber(numbers: number[]) {
   let largestNumber = numbers[0];

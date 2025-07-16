@@ -1,3 +1,9 @@
+// flatten a nested array : Task 7
+
+export function flattenNestedArray<T>(arrayInput: T[]) {
+  return arrayInput.flat(Infinity);
+}
+
 // palindrome
 // Task 8
 export function palindromeChecker(input: number | string) {
@@ -5,7 +11,7 @@ export function palindromeChecker(input: number | string) {
     typeof input === "string"
       ? input.split("").reverse().join("")
       : input.toString().split("").reverse().join("");
-  if (reversedString === input) {
+  if (reversedString === input.toString()) {
     return true;
   }
   return false;
@@ -24,4 +30,27 @@ export function characterFrequencyChecker(input: string) {
     }
   }
   return frequencyObject;
+}
+// Find First Non-Repeating Character : Task 11
+
+export function findNonRepeatingUniqueCharacter(input: string) {
+  const splittedString = input.split("");
+  const firstNonRepeatingString = splittedString.find((character, index) => {
+    if (index === 0 && character !== splittedString[index + 1]) {
+      return true;
+    }
+    if (
+      index === splittedString.length - 1 &&
+      character !== splittedString[index - 1]
+    ) {
+      return true;
+    }
+    if (
+      character !== splittedString[index - 1] &&
+      character !== splittedString[index + 1]
+    ) {
+      return true;
+    }
+  });
+  return firstNonRepeatingString;
 }

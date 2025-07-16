@@ -18,16 +18,23 @@ function DebuggingReact() {
     // like the above solution
   }
   return (
-    <div className="flex flex-col space-y-8">
-      <div>
+    <div className="flex flex-col space-y-8 ">
+      <div className="flex w-full justify-center">
         {/* Event handler issue ,Debug task :3 */}
         {/* <button onClick={handleClick()}>Click Me</button> : wrong*/}
-        <button onClick={handleClick}>Click Me</button>
+        <button
+          className="border rounded p-1 bg-gray-100"
+          onClick={handleClick}
+        >
+          Click Me
+        </button>
         {/* fixed */}
       </div>
       <div className="flex flex-col items-center justify-center">
         <p>Count: {count}</p>
-        <button onClick={increment}>Count+</button>
+        <button className="border p-1 bg-gray-100 rounded" onClick={increment}>
+          Count+
+        </button>
       </div>
     </div>
   );
