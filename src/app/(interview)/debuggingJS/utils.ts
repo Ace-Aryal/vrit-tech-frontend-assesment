@@ -6,7 +6,7 @@ export function test() {
   console.log(message);
 }
 // prints "hi"
-//Reason : This is because of scoping :
+//Reason : This is because of scoping ,
 // In js only let and const has block scope but variable devlared with "var" keyword has functional scope
 // therefore the scole of variable message here is the function test itself so variable message is still
 // defined in the scope of console.log(message) snd we get output "hi"

@@ -1,4 +1,5 @@
 // palindrome
+// Task 8
 export function palindromeChecker(input: number | string) {
   const reversedString =
     typeof input === "string"
@@ -9,7 +10,8 @@ export function palindromeChecker(input: number | string) {
   }
   return false;
 }
-//
+// character frequency checker
+//Task 9
 export function characterFrequencyChecker(input: string) {
   const frequencyObject: { [key: string]: number } = {};
   const splittedString: string[] = input.split("");

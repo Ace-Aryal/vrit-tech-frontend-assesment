@@ -16,7 +16,7 @@ function IntermediateQuestions() {
   const passwordRef = useRef<HTMLInputElement>(null);
   function submitControlledInput(e: FormEvent) {
     e.preventDefault();
-    // submit logic and vakidations here
+    // submit logic and validations here
     console.log("Controlled", {
       username,
       password,

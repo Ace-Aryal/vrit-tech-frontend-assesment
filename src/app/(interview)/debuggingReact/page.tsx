@@ -14,7 +14,8 @@ function DebuggingReact() {
     // setCount(count + 1);
     // or
     setCount((prevCount) => prevCount + 1);
-    //  this way we can call setCount correctly also this approach doesnot batch update count like the above solution
+    //  this way we can call setCount correctly also this approach does not batch update count
+    // like the above solution
   }
   return (
     <div className="flex flex-col space-y-8">
