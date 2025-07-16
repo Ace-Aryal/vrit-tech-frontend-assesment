@@ -20,6 +20,14 @@ const navbarConfig = [
     label: "Task4",
     href: "/video-assesment",
   },
+  {
+    label: "Easy",
+    href: "/easy",
+  },
+  {
+    label: "Intermediate",
+    href: "/intermediate",
+  },
 ];
 function Navbar() {
   const pathname = usePathname();
