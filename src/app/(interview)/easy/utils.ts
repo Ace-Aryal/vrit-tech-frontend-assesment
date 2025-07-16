@@ -1,4 +1,4 @@
-// find largest number
+// find largest number : task2
 export function findLargestNumber(numbers: number[]) {
   let largestNumber = numbers[0];
   for (let i = 1; i < numbers.length; i++) {
@@ -9,7 +9,7 @@ export function findLargestNumber(numbers: number[]) {
   return largestNumber;
 }
 
-//print even numbers
+//print even numbers : task 3
 
 export function printEvenNumbers(finalNum: number) {
   const evenNumsArray = [];
@@ -21,12 +21,12 @@ export function printEvenNumbers(finalNum: number) {
   return evenNumsArray;
 }
 
-// sum of array numbers
+// sum of array numbers : task 4
 
 export function sumOfArrayNumbers(numberArray: number[]) {
   let sum = 0;
   for (let i = 0; i < numberArray.length; i++) {
     sum += numberArray[i];
   }
-  return sum
+  return sum;
 }

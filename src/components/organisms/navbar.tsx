@@ -28,6 +28,14 @@ const navbarConfig = [
     label: "Intermediate",
     href: "/intermediate",
   },
+  {
+    label: "Debug JS",
+    href: "/debuggingJS",
+  },
+  {
+    label: "Debug React",
+    href: "/debuggingReact",
+  },
 ];
 function Navbar() {
   const pathname = usePathname();
