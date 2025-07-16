@@ -116,7 +116,7 @@ export function characterFrequencyChecker(input: string) {
     by `useState` and the `value` for form inputs are derived from `state variables` . Also when the values of input fields changes that effect is reflecetd
     in the state variables. This re-renders the page on every state change.
 
-  ```ts
+  ```tsx
   // state variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -170,42 +170,42 @@ export function characterFrequencyChecker(input: string) {
   - In React, uncontrolled components are those components which are not controlled by React hooks and instead they are referenced from the `DOM` iteslf using
     useRef hook, instead of state this provides the `DOM reference` of the component and this also does not cause re-render
 
-```ts
-// Ref
-const usernameRef = useRef<HTMLInputElement>(null);
-const passwordRef = useRef<HTMLInputElement>(null);
+  ```tsx
+  // Ref
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
-// handler
-function submitUncontrolledInput(e: FormEvent) {
-  e.preventDefault();
-  const username = usernameRef.current?.value;
-  const password = passwordRef?.current?.value;
-  console.log("Uncontrolled", {
-    username,
-    password,
-  });
-}
+  // handler
+  function submitUncontrolledInput(e: FormEvent) {
+    e.preventDefault();
+    const username = usernameRef.current?.value;
+    const password = passwordRef?.current?.value;
+    console.log("Uncontrolled", {
+      username,
+      password,
+    });
+  }
 
-// form
-<form
-  onSubmit={submitUncontrolledInput}
-  action=""
-  className="flex flex-col justify-center space-y-2"
->
-  <p>Uncontrolled login form</p>
-  <div className="flex gap-2 justify-center">
-    <label htmlFor="">Username:</label>
-    <input className="border w-64" ref={usernameRef} type="text" />
-  </div>
-  <div className="flex gap-2 justify-center">
-    <label htmlFor="">Passoword:</label>
-    <input className="border w-64" ref={passwordRef} type="password" />
-  </div>
-  <button type="submit" className="bg-gray-100 rounded-lg p-1">
-    Submit
-  </button>
-</form>;
-```
+  // form
+  <form
+    onSubmit={submitUncontrolledInput}
+    action=""
+    className="flex flex-col justify-center space-y-2"
+  >
+    <p>Uncontrolled login form</p>
+    <div className="flex gap-2 justify-center">
+      <label htmlFor="">Username:</label>
+      <input className="border w-64" ref={usernameRef} type="text" />
+    </div>
+    <div className="flex gap-2 justify-center">
+      <label htmlFor="">Passoword:</label>
+      <input className="border w-64" ref={passwordRef} type="password" />
+    </div>
+    <button type="submit" className="bg-gray-100 rounded-lg p-1">
+      Submit
+    </button>
+  </form>;
+  ```
 
 ## Debugging tasks
 
@@ -245,7 +245,7 @@ holding different memory address and we are comparing memory address with `===` 
 
 - Task 3: Debug the React code
 
-```ts
+```tsx
 <button onClick={handleClick()}>Click Me</button>
 ```
 
@@ -253,7 +253,7 @@ The above code is syntactically incorrect for desired action because `onClick` o
 but in the above snippet we are calling `handleClick` function directly instead of passing it as a callback, so the function will be
 executed during rendering time not during click event.
 
-```ts
+```tsx
 // fixed code
 <button onClick={handleClick}>Click Me</button>
 ```
