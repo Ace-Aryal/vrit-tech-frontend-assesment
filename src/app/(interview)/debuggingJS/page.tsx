@@ -7,7 +7,9 @@ function DebuggingJs() {
     test();
   }, []);
   return (
-    <div className="h-full w-full flex justify-center">DebuggingTasks</div>
+    <div className="h-full w-full flex justify-center">
+      Please look up to the docs or code file for Javascript Debugging tasks
+    </div>
   );
 }
 

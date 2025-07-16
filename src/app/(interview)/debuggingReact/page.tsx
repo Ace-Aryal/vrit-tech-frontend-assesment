@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function DebuggingReact() {
   const [count, setCount] = useState(0);
   function handleClick() {
-    console.log("clicked button");
+    alert("Button fixed");
   }
   function increment() {
     // setCount(count++)
@@ -36,6 +36,8 @@ function DebuggingReact() {
           Count+
         </button>
       </div>
+      Please look up to the docs or code file for React Debugging tasks
+      <p></p>
     </div>
   );
 }
