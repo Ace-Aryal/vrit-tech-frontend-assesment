@@ -185,7 +185,7 @@ function WHOISLookupComponent() {
       >
         Look up domain
       </button>
-      <p className="text-sm text-red-600">{errorMessage}</p>
+      {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
     </form>
   );
 }

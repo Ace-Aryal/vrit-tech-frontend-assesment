@@ -2,6 +2,18 @@
 
 ## Easy Tasks
 
+- Task 1
+  : Reverse a given string
+
+```ts
+//   solution
+export function reverseString(input: string) {
+  return input.split("").reverse().join("");
+}
+// input : "Bibek"
+// output : "kebiB"
+```
+
 - Task 2
   : Write function to find largest number
 
@@ -56,7 +68,25 @@ export function sumOfArrayNumbers(numberArray: number[]) {
 // Output : 15
 ```
 
+- Task 5
+  : Write function to deounce search
+- Skipped:
+- Debouncing is the technique used in `api` handling to prevent multiple api calls ensuring the performance of Application. We can see its exapmle in shopping websites
+  like flipcart. When we are countinusosly typing we get no suggestions but as we stop typing we are shown search results. This is debouncing in practice. Each
+  keystroke resets previous timeout. Another technique is `throttling` in which unlike debounce previous timeouts are not reset and the api calls happens in certain
+  interval if user performs some triggering action
+
 ## Intermediate Tasks
+
+- Task 7 : Flattening nested array
+
+```ts
+export function flattenNestedArray<T>(arrayInput: T[]) {
+  return arrayInput.flat(Infinity);
+}
+//input : [1,[2,[3,4],5],6]
+// output : [1,2,3,4,5,6]
+```
 
 - Task 8 : Check palindrome of given number or string
 
@@ -206,6 +236,64 @@ export function characterFrequencyChecker(input: string) {
     </button>
   </form>;
   ```
+
+- Task 11 : Find First Non-Repeating Character
+
+```ts
+export function findNonRepeatingUniqueCharacter(input: string) {
+  const splittedString = input.split("");
+  const firstNonRepeatingString = splittedString.find((character, index) => {
+    if (index === 0 && character !== splittedString[index + 1]) {
+      return true;
+    }
+    if (
+      index === splittedString.length - 1 &&
+      character !== splittedString[index - 1]
+    ) {
+      return true;
+    }
+    if (
+      character !== splittedString[index - 1] &&
+      character !== splittedString[index + 1]
+    ) {
+      return true;
+    }
+  });
+  return firstNonRepeatingString;
+}
+```
+
+- Task 12: WHOISlookup
+
+```tsx
+// state variales
+const [errorMessage, setErrorMessage] = useState<string | null>(null);
+const [domainInput, setDomainInput] = useState("");
+const [domainRes, setDomainRes] = useState<unknown>(null);
+
+//fetching and error handling
+try {
+  const response = await fetch(`https://api-ninjas.com/api/${domainInput}`);
+  if (!response.ok) {
+    setErrorMessage("Error fetching data");
+  }
+  if (response.status === 404) {
+    setErrorMessage("Domain not found");
+  }
+  const data = await response.json();
+  setDomainRes(data);
+  console.log(data);
+} catch (error: unknown) {
+  console.error(error);
+  const errorMessage =
+    error instanceof Error ? error.message : "Error fetching data";
+  setErrorMessage(errorMessage);
+}
+// displaying error (if any)
+{
+  errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>;
+}
+```
 
 ## Debugging tasks
 
